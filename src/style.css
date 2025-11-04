@@ -17,3 +17,13 @@
 @theme {
     --font-vazir: "Vazirmatn", sans-serif; 
   }
+
+.withFingerprint {
+  @apply flex justify-center items-center space-x-2 py-2 bg-blue-500;
+}
+
+.noFingerprint {
+  @apply py-3 bg-[#bfccd4];
+}
+
+/* bg-[#bfccd4] */
