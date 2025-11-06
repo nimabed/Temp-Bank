@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="src/style.css">
+  <title>Sign Up
+  </title>
+</head>
+
+<body>
+  <!-- Main container -->
+  <div class="max-w-[450px] h-screen mx-auto py-2 px-4 bg-gray-100/40">
+    <div class="relative h-full pt-10">
+      <!-- ----- STEP 1: Starter page ----- -->
+      <div class="hidden absolute bottom-8 w-full flex items-center justify-center space-x-3">
+        <button class="w-full py-3 border-3 rounded-xl font-vazir font-semibold bg-white border-white text-sky-700 cursor-pointer">بازکردن حساب</button>
+        <button class="w-full py-3 border-3 rounded-xl font-vazir font-semibold border-white text-white bg-transparent cursor-pointer">حساب بلو دارم</button>
+      </div>
+
+      <!-- ----- STEP 2: Begin page----- -->
+      <div class="">
+        <!-- Top section -->
+        <div class="flex justify-between">
+          <a href="#">
+            <i class="fa-solid fa-xmark fa-xl text-blue-500"></i>
+          </a>
+          <span class="font-vazir font-semibold text-[17px]">بازکردن حساب</span>
+          <a href="#">
+            <i class="fa-solid fa-circle-question fa-xl text-blue-500"></i>
+          </a>
+        </div>
+        <!-- Middle section -->
+        <div class="flex flex-col items-center space-y-3 mt-6">
+          <img class="w-[250px]" src="home1.png" alt="homeIcon">
+
+          <span class="font-vazir font-semibold text-[17px]">در فرآیند بازکردن حساب در بلو به موارد زیر نیاز خواهید داشت:</span>
+
+          <div class="self-start">
+            <div class="flex items-center space-x-5">
+              <img class="w-13" src="clock.webp" alt="clock">
+              <div class="mt-2">
+                <span class="font-vazir block">۷ دقیقه زمان!</span>
+                <span class="font-vazir text-gray-400">کمتر از ۷ دقیقه زمان نیاز دارید</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="self-start mt-2 ">
+            <div class="flex items-center space-x-5">
+              <img class="w-13" src="sim.webp" alt="sim">
+              <div class="mt-2">
+                <span class="font-vazir block">سیم&zwnj;کارت به&zwnj;نام</span>
+                <span class="font-vazir text-gray-400">فعال و به نام خودتان باشد</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="self-start mt-2">
+            <div class="flex items-center space-x-5">
+              <img class="w-13" src="camera.webp" alt="camera">
+              <div class="mt-2">
+                <span class="font-vazir block">ویدیو سلفی</span>
+                <span class="font-vazir text-gray-400">کوتاه و با متن مشخص&zwnj;شده از شما ضبط خواهد شد</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Bottom section -->
+        <button class="absolute bottom-8 py-3 w-full rounded-xl font-vazir font-semibold text-white bg-blue-500 cursor-pointer">شروع</button>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="./src/signup.js"></script>
+</body>
+</html>
