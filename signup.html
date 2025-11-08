@@ -12,16 +12,20 @@
 
 <body>
   <!-- Main container -->
-  <div class="max-w-[450px] h-screen mx-auto py-2 px-4 bg-gray-100/40">
+  <div class="max-w-[440px] h-screen mx-auto py-2 px-4 bg-gray-100/40">
     <div class="relative h-full pt-10">
       <!-- ----- STEP 1: Starter page ----- -->
       <div class="hidden absolute bottom-8 w-full flex items-center justify-center space-x-3">
-        <button class="w-full py-3 border-3 rounded-xl font-vazir font-semibold bg-white border-white text-sky-700 cursor-pointer">بازکردن حساب</button>
-        <button class="w-full py-3 border-3 rounded-xl font-vazir font-semibold border-white text-white bg-transparent cursor-pointer">حساب بلو دارم</button>
+        <button
+          class="w-full py-3 border-3 rounded-xl font-vazir font-semibold bg-white border-white text-sky-700 cursor-pointer">بازکردن
+          حساب</button>
+        <button
+          class="w-full py-3 border-3 rounded-xl font-vazir font-semibold border-white text-white bg-transparent cursor-pointer">حساب
+          بلو دارم</button>
       </div>
 
       <!-- ----- STEP 2: Begin page----- -->
-      <div class="">
+      <div class="hidden">
         <!-- Top section -->
         <div class="flex justify-between">
           <a href="#">
@@ -36,7 +40,8 @@
         <div class="flex flex-col items-center space-y-3 mt-6">
           <img class="w-[250px]" src="home1.png" alt="homeIcon">
 
-          <span class="font-vazir font-semibold text-[17px]">در فرآیند بازکردن حساب در بلو به موارد زیر نیاز خواهید داشت:</span>
+          <span class="font-vazir font-semibold text-[17px]">در فرآیند بازکردن حساب در بلو به موارد زیر نیاز خواهید
+            داشت:</span>
 
           <div class="self-start">
             <div class="flex items-center space-x-5">
@@ -69,12 +74,118 @@
           </div>
         </div>
         <!-- Bottom section -->
-        <button class="absolute bottom-8 py-3 w-full rounded-xl font-vazir font-semibold text-white bg-blue-500 cursor-pointer">شروع</button>
+        <button
+          class="absolute bottom-8 py-3 w-full rounded-xl font-vazir font-semibold text-white bg-blue-500 cursor-pointer">شروع</button>
       </div>
 
+      <!-- -----STEP 3: ----- -->
+      <div class="block">
+        <!-- Top section -->
+        <div class="flex justify-between">
+          <a href="#">
+            <i class="fa-solid fa-xmark fa-xl text-blue-500"></i>
+          </a>
+          <a href="#">
+            <i class="fa-solid fa-circle-question fa-xl text-blue-500"></i>
+          </a>
+        </div>
+        <!-- Title section -->
+        <div class="mt-10">
+          <span class="block font-vazir font-extrabold text-[25px] mb-px">بازکردن حساب در بلو</span>
+          <span class="font-vazir text-gray-700">تکمیل مراحل زیر، فقط چند دقیقه زمان نیاز دارد</span>
+        </div>
+        <!-- Middle section -->
+        <div class="relative flex flex-col items-center space-y-3 mt-6 mr-2">
+          <!-- Progress line -->
+          <span class="absolute bg-gray-300 right-0 top-3 w-0.5 h-[90%] -z-1"></span>
+
+          <div class="self-start">
+            <div class="flex items-start space-x-3">
+              <!-- Icon -->
+              <div
+                class="relative size-6 aspect-square rounded-full mt-3 -mr-[11px] bg-white border-2 border-black outline-8 outline-white">
+                <img class="relative w-1/2 mx-auto top-1/2 -translate-y-1/2" src="circle-black.png" alt="circle-black">
+
+              </div>
+
+              <!-- Tex -->
+              <div class="mt-2">
+                <span class="font-vazir block font-bold text-xl">ساخت حساب کاربری</span>
+                <span class="font-vazir text-[15px] text-gray-700">در این مرحله اطلاعات خودتان را وارد می&zwnj;کنید و
+                  رمز عبور انتخاب می&zwnj;کنید</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="self-start mt-2 ">
+            <div class="flex items-start space-x-3">
+              <!-- Icon -->
+              <div
+                class="size-6 border-2 outline-8 aspect-square rounded-full mt-3 -mr-[11px] bg-white border-white outline-white">
+                <img class="relative mx-auto top-1/2 -translate-y-1/2" src="circle-gray.png" alt="circle-gray">
+              </div>
+
+              <!-- Text -->
+              <div class="mt-2">
+                <span class="font-vazir block font-semibold text-gray-400">شناسایی هویت شما</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="self-start mt-2">
+            <div class="flex items-start space-x-3">
+              <!-- Icon -->
+              <div
+                class="size-6 aspect-square rounded-full mt-3 -mr-[11px] border-2 border-white outline-8 outline-white bg-white">
+                <img class="relative mx-auto top-1/2 -translate-y-1/2" src="circle-gray.png" alt="circle-gray">
+              </div>
+
+              <!-- Text -->
+              <div class="mt-2">
+                <span class="font-vazir block font-semibold text-gray-400">بررسی اطلاعات شما توسط بلو</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="self-start mt-2">
+            <div class="flex items-start space-x-3">
+              <!-- Icon                -->
+              <div
+                class="size-6 aspect-square rounded-full mt-3 -mr-[11px] border-2 border-white outline-8 outline-white bg-white">
+                <img class="relative mx-auto top-1/2 -translate-y-1/2" src="circle-gray.png" alt="circle-gray">
+              </div>
+
+              <!-- Text -->
+              <div class="mt-2">
+                <span class="font-vazir block font-semibold text-gray-400">سفارش رایگان بلوکارت</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Footer section -->
+        <div class="absolute bottom-8 w-full">
+          <div class="flex justify-end items-center w-full">
+            <div class="font-vazir ml-auto"><a class="text-blue-700" href="#">قوانین و شرایط</a> را خواندم و قبول می&zwnj;کنم
+            </div>
+            <!-- Switch toggler -->
+            <div>
+              <label id="toggler" class="relative left-3 top-1 inline-flex items-center cursor-pointer">
+                <input type="checkbox" value="" class="sr-only peer">
+                <div class="w-9 h-5 bg-[#A0DECF] rounded-full peer-checked:bg-gray-300
+
+              after:content-[''] after:absolute after:top-1/2 after:right-[18px] after:-translate-y-1/2 after:bg-[#00A881] after:border after:border-gray-300 after:rounded-full 
+              after:h-7 after:w-7 after:transition-all 
+              peer-checked:after:translate-x-full peer-checked:after:bg-white"></div>
+              </label>
+            </div>
+          </div>
+          <button id="continueBtn" class="w-full py-3 text-white font-vazir font-semibold bg-[#bfccd4] border-[#bfc6ce] rounded-xl mt-10 cursor-pointer">ادامه</button>
+        </div>
+      </div>
     </div>
   </div>
 
   <script src="./src/signup.js"></script>
 </body>
+
 </html>

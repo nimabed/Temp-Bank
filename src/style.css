@@ -19,6 +19,13 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'Vazirmatn';
+  src: url('./assets/fonts/Vazirmatn-ExtraBold.woff2') format('woff2');
+  font-weight: 800;
+  font-style: normal;
+}
+
 @import "tailwindcss";
 
 @theme {
@@ -32,5 +39,3 @@
 .noFingerprint {
   @apply py-3 bg-[#bfccd4];
 }
-
-/* bg-[#bfccd4] */
