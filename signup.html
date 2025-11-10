@@ -15,7 +15,7 @@
   <div class="max-w-[440px] h-screen mx-auto py-2 px-4 bg-gray-100/40">
     <div class="relative h-full pt-10">
       <!-- ----- STEP 1: Starter page ----- -->
-      <div class="hidden absolute bottom-8 w-full flex items-center justify-center space-x-3">
+      <div class="step hidden absolute bottom-8 w-full flex items-center justify-center space-x-3">
         <button
           class="w-full py-3 border-3 rounded-xl font-vazir font-semibold bg-white border-white text-sky-700 cursor-pointer">بازکردن
           حساب</button>
@@ -25,7 +25,7 @@
       </div>
 
       <!-- ----- STEP 2: Begin page----- -->
-      <div class="hidden">
+      <div class="step hidden">
         <!-- Top section -->
         <div class="flex justify-between">
           <a href="#">
@@ -78,8 +78,8 @@
           class="absolute bottom-8 py-3 w-full rounded-xl font-vazir font-semibold text-white bg-blue-500 cursor-pointer">شروع</button>
       </div>
 
-      <!-- -----STEP 3: ----- -->
-      <div class="block">
+      <!-- -----STEP 3: Roadmat page----- -->
+      <div class="step hidden">
         <!-- Top section -->
         <div class="flex justify-between">
           <a href="#">
@@ -167,21 +167,84 @@
           <div class="flex justify-end items-center w-full">
             <div class="font-vazir ml-auto"><a class="text-blue-700" href="#">قوانین و شرایط</a> را خواندم و قبول می&zwnj;کنم
             </div>
-            <!-- Switch toggler -->
+            <!-- Toggler icon -->
             <div>
-              <label id="toggler" class="relative left-3 top-1 inline-flex items-center cursor-pointer">
-                <input type="checkbox" value="" class="sr-only peer">
-                <div class="w-9 h-5 bg-[#A0DECF] rounded-full peer-checked:bg-gray-300
-
-              after:content-[''] after:absolute after:top-1/2 after:right-[18px] after:-translate-y-1/2 after:bg-[#00A881] after:border after:border-gray-300 after:rounded-full 
-              after:h-7 after:w-7 after:transition-all 
-              peer-checked:after:translate-x-full peer-checked:after:bg-white"></div>
+              <label id="toggler" class="relative left-3 cursor-pointer">
+                <input id="myCheckbox" type="checkbox" autocomplete="off" class="sr-only peer">
+                <div class="w-9 h-5 bg-gray-300 rounded-full peer-checked:bg-[#A0DECF] after:content-[''] after:absolute after:top-1/2 after:-right-2.5 after:-translate-y-1/2 after:bg-white after:border after:border-gray-300 after:rounded-full after:h-7 after:w-7 after:transition-all peer-checked:after:-translate-x-full peer-checked:after:bg-[#00A881]"></div>
               </label>
             </div>
           </div>
           <button id="continueBtn" class="w-full py-3 text-white font-vazir font-semibold bg-[#bfccd4] border-[#bfc6ce] rounded-xl mt-10 cursor-pointer">ادامه</button>
         </div>
       </div>
+
+      <!-- ----- STEP 4: Enter phone number ----- -->
+      <div class="step hidden">
+        <!-- Top section -->
+        <div class="flex justify-between">
+          <a href="#">
+            <i class="fa-solid fa-xmark fa-xl text-blue-500"></i>
+          </a>
+          <span class="font-vazir font-semibold text-[17px]"> ساخت حساب کاربری</span>
+          <a href="#">
+            <i class="fa-solid fa-circle-question fa-xl text-blue-500"></i>
+          </a>
+        </div>
+        <!-- Middle section -->
+        <div class="relative mt-10">
+          <span class="font-vazir font-semibold text-gray-700">شماره تلفن همراه خود را وارد کنید</span>
+          <input class="w-full border-2 border-sky-600 py-3 pr-11 mt-4 rounded-lg focus:outline-1 focus:outline-sky-600 [unicode-bidi:bidi-override] placeholder:font-vazir" type="text" placeholder="مانند: ۹۸۷۶ ۵۴۳ ۲۱۹۰">
+          <img class="absolute bottom-2 right-2 w-[9%]" src="simcard.png" alt="simcard">
+  
+        </div>
+        <!-- Bottom section -->
+        <div class="absolute bottom-8 w-full flex justify-between items-center">
+          <span class="font-vazir text-[17px] text-gray-500">در ادامه کد تایید برای شما ارسال می&zwnj;شود</span>
+          <span class="py-6 px-4 rounded-full text-center bg-[#bfccd4] text-white cursor-pointer">
+            <i class="fa-solid fa-arrow-left fa-2xl"></i>
+          </span>
+        </div>
+      </div>
+
+      <!-- ----- STEP 5: Enter received code ----- -->
+      <div class="step hidden !block">
+        <!-- Top section -->
+        <div class="flex justify-between">
+          <a href="#">
+            <i class="fa-solid fa-arrow-right fa-xl text-blue-400"></i>
+          </a>
+          <span class="font-vazir font-semibold text-[17px]"> ساخت حساب کاربری</span>
+          <a href="#">
+            <i class="fa-solid fa-circle-question fa-xl text-blue-500"></i>
+          </a>
+        </div>
+        <!-- Middle section -->
+        <div class="relative mt-10">
+          <span class="font-vazir font-semibold text-gray-700">کد تایید ارسال شده به <span class="[unicode-bidi:bidi-override]">۹۸۷۶ ۵۴۳ ۲۱۹۰</span> را وارد کنید</span>
+          <div class="mt-4 flex justify-between">
+            <input type="text" class="w-15 h-13 bg-gray-100 rounded-xl focus:outline-0 focus:caret-transparent focus:border-2 focus:border-sky-600" />
+            <input type="text" class="w-15 h-13 bg-gray-100 rounded-xl focus:outline-0 focus:caret-transparent focus:border-2 focus:border-sky-600" />
+            <input type="text" class="w-15 h-13 bg-gray-100 rounded-xl focus:outline-0 focus:caret-transparent focus:border-2 focus:border-sky-600" />
+            <input type="text" class="w-15 h-13 bg-gray-100 rounded-xl focus:outline-0 focus:caret-transparent focus:border-2 focus:border-sky-600" />
+            <input type="text" class="w-15 h-13 bg-gray-100 rounded-xl focus:outline-0 focus:caret-transparent focus:border-2 focus:border-sky-600" />
+            <input type="text" class="w-15 h-13 bg-gray-100 rounded-xl focus:outline-0 focus:caret-transparent focus:border-2 focus:border-sky-600" />
+          </div>
+
+  
+        </div>
+        <!-- Bottom section -->
+        <div class="absolute bottom-8 w-full flex justify-end ">
+          <span class="py-6 px-4 rounded-full text-center bg-[#bfccd4] text-white cursor-pointer">
+            <i class="fa-solid fa-arrow-left fa-2xl"></i>
+          </span>
+        </div>
+      </div>
+
+      
+
+
+
     </div>
   </div>
 
