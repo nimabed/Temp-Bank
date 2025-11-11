@@ -15,13 +15,15 @@
   <div class="max-w-[440px] h-screen mx-auto py-2 px-4 bg-gray-100/40">
     <div class="relative h-full pt-10">
       <!-- ----- STEP 1: Starter page ----- -->
-      <div class="step hidden absolute bottom-8 w-full flex items-center justify-center space-x-3">
-        <button
-          class="w-full py-3 border-3 rounded-xl font-vazir font-semibold bg-white border-white text-sky-700 cursor-pointer">بازکردن
-          حساب</button>
-        <button
-          class="w-full py-3 border-3 rounded-xl font-vazir font-semibold border-white text-white bg-transparent cursor-pointer">حساب
-          بلو دارم</button>
+      <div class="step hidden">
+        <div class="absolute bottom-8 w-full flex items-center justify-center space-x-3">
+          <button
+            class="w-full py-3 border-3 rounded-xl font-vazir font-semibold bg-white border-white text-sky-700 cursor-pointer">بازکردن
+            حساب</button>
+          <button
+            class="w-full py-3 border-3 rounded-xl font-vazir font-semibold border-white text-white bg-transparent cursor-pointer">حساب
+            بلو دارم</button>
+        </div>
       </div>
 
       <!-- ----- STEP 2: Begin page----- -->
@@ -194,7 +196,7 @@
         <!-- Middle section -->
         <div class="relative mt-10">
           <span class="font-vazir font-semibold text-gray-700">شماره تلفن همراه خود را وارد کنید</span>
-          <input class="w-full border-2 border-sky-600 py-3 pr-11 mt-4 rounded-lg focus:outline-1 focus:outline-sky-600 [unicode-bidi:bidi-override] placeholder:font-vazir" type="text" placeholder="مانند: ۹۸۷۶ ۵۴۳ ۲۱۹۰">
+          <input class="w-full border-2 border-sky-600 py-3 pr-11 mt-4 rounded-lg bg-gray-100 focus:outline-1 focus:outline-sky-600 [unicode-bidi:bidi-override] placeholder:font-vazir" type="text" placeholder="مانند: ۹۸۷۶ ۵۴۳ ۲۱۹۰">
           <img class="absolute bottom-2 right-2 w-[9%]" src="simcard.png" alt="simcard">
   
         </div>
@@ -253,15 +255,13 @@
             <i class="fa-solid fa-circle-question fa-xl text-blue-500"></i>
           </a>
         </div>
-
         <!-- Middle section -->
         <div class="relative mt-10">
           <span class="font-vazir font-semibold text-gray-700">کد معرف خود را وارد کنید (اختیاری)</span>
-          <input class="w-full border-2 border-sky-600 py-3 pr-11 mt-4 rounded-lg focus:outline-1 focus:outline-sky-600 placeholder:font-vazir placeholder:text-[16px]" type="text" placeholder="مانند: MDMGKP ">
+          <input class="w-full border-2 border-sky-600 py-3 pr-11 mt-4 rounded-lg bg-gray-100 focus:outline-1 focus:outline-sky-600 placeholder:font-vazir placeholder:text-[16px]" type="text" placeholder="مانند: MDMGKP ">
           <img class="absolute bottom-3 right-3 w-[7%]" src="mail1.png" alt="mail">
           <img class="absolute bottom-2 left-2 w-[9%]" src="document.png" alt="document">
         </div>
-
         <!-- Bottom section -->
         <div class="absolute bottom-8 w-full flex justify-end ">
           <span class="py-6 px-4 rounded-full text-center bg-blue-500 text-white cursor-pointer">
@@ -272,7 +272,7 @@
       </div>
 
       <!-- ----- STEP 7: Enter personal ID ----- -->
-      <div class="step hidden !block">
+      <div class="step hidden">
         <!-- Top section -->
         <div class="flex justify-between">
           <a href="#">
@@ -286,7 +286,7 @@
         <!-- Middle section -->
         <div class="relative mt-10">
           <span class="font-vazir font-semibold text-gray-700">کد معرف خود را وارد کنید (اختیاری)</span>
-          <input class="w-full border-2 border-sky-600 py-3 pr-12 mt-4 rounded-lg focus:outline-1 focus:outline-sky-600 placeholder:font-vazir placeholder:text-[16px]" type="text" placeholder="کد ملی ۱۰ رقمی">
+          <input class="w-full border-2 border-sky-600 py-3 pr-12 mt-4 rounded-lg focus:outline-1 bg-gray-100 focus:outline-sky-600 placeholder:font-vazir placeholder:text-[16px]" type="text" placeholder="کد ملی ۱۰ رقمی">
           <img class="absolute bottom-2.5 right-3 w-[8%]" src="contact.png" alt="contact">
         </div>
         <!-- Bottom section -->
@@ -296,6 +296,119 @@
           </span>
         </div>        
       </div>
+
+      <!-- ----- STEP 8: Enter date of birth ----- -->
+       <div class="step hidden !block">
+        <!-- Top section -->
+        <div class="flex justify-between">
+          <a href="#">
+            <i class="fa-solid fa-xmark fa-xl text-blue-500"></i>
+          </a>
+          <span class="font-vazir font-semibold text-[17px]"> ساخت حساب کاربری</span>
+          <a href="#">
+            <i class="fa-solid fa-circle-question fa-xl text-blue-500"></i>
+          </a>
+        </div>    
+        <!-- Middle section -->
+        <div class="relative mt-10">
+          <span class="font-vazir font-semibold text-gray-700">تاریخ تولد خود را وارد کنید</span>
+          <input class="w-full py-3 pr-12 mt-4 rounded-lg bg-gray-100 focus:outline-1 focus:outline-sky-600 placeholder:font-vazir placeholder:text-[16px]" type="text" placeholder="روز/ماه/سال">
+          <img class="absolute bottom-2.5 right-3 w-[8%]" src="contact.png" alt="contact">
+        </div>
+        <!-- Bottom section -->
+        <div class="absolute bottom-2 w-full">
+          <!-- Next button -->
+          <div class="w-full flex justify-end mb-5">
+            <span class="py-6 px-4 rounded-full text-center bg-[#bfccd4] text-white cursor-pointer">
+              <i class="fa-solid fa-arrow-left fa-2xl"></i>
+            </span>
+          </div>  
+          <!-- Snap scroll date box -->
+          <div class="h-[250px] flex border-t-1 border-t-gray-100 pt-3">
+            <!-- Days box -->
+            <div class="size-full flex flex-col border-l-1 border-l-gray-100 space-y-1 snap-y overflow-y-scroll snap-mandatory scrollbar-none">
+              <!-- Days -->
+              <div class="font-vazir py-3 text-center snap-center">1</div>
+              <div class="font-vazir py-3 text-center snap-center">2</div>
+              <div class="font-vazir py-3 text-center snap-center">3</div>
+              <div class="font-vazir py-3 text-center snap-center">4</div>
+              <div class="font-vazir py-3 text-center snap-center">5</div>
+              <div class="font-vazir py-3 text-center snap-center">6</div>
+              <div class="font-vazir py-3 text-center snap-center">7</div>
+              <div class="font-vazir py-3 text-center snap-center">8</div>
+              <div class="font-vazir py-3 text-center snap-center">9</div>
+              <div class="font-vazir py-3 text-center snap-center">10</div>
+              <div class="font-vazir py-3 text-center snap-center">11</div>
+              <div class="font-vazir py-3 text-center snap-center">12</div>
+              <div class="font-vazir py-3 text-center snap-center">13</div>
+              <div class="font-vazir py-3 text-center snap-center">14</div>
+              <div class="font-vazir py-3 text-center snap-center">15</div>
+              <div class="font-vazir py-3 text-center snap-center">16</div>
+              <div class="font-vazir py-3 text-center snap-center">17</div>
+              <div class="font-vazir py-3 text-center snap-center">18</div>
+              <div class="font-vazir py-3 text-center snap-center">19</div>
+              <div class="font-vazir py-3 text-center snap-center">20</div>
+              <div class="font-vazir py-3 text-center snap-center">21</div>
+              <div class="font-vazir py-3 text-center snap-center">22</div>
+              <div class="font-vazir py-3 text-center snap-center">23</div>
+              <div class="font-vazir py-3 text-center snap-center">24</div>
+              <div class="font-vazir py-3 text-center snap-center">25</div>
+              <div class="font-vazir py-3 text-center snap-center">26</div>
+              <div class="font-vazir py-3 text-center snap-center">27</div>
+              <div class="font-vazir py-3 text-center snap-center">28</div>
+              <div class="font-vazir py-3 text-center snap-center">29</div>
+              <div class="font-vazir py-3 text-center snap-center">30</div>
+            </div>
+
+            <!-- Months box -->
+            <div class="size-full flex flex-col space-y-1 overflow-y-scroll snap snap-mandatory scrollbar-none">
+              <!-- Months -->
+              <div class="font-vazir text-center py-3 snap-center">فروردین</div>
+              <div class="font-vazir text-center py-3 snap-center">اردیبهشت</div>
+              <div class="font-vazir text-center py-3 snap-center">خرداد</div>
+              <div class="font-vazir text-center py-3 snap-center">تیر</div>
+              <div class="font-vazir text-center py-3 snap-center">مرداد</div>
+              <div class="font-vazir text-center py-3 snap-center">شهریور</div>
+              <div class="font-vazir text-center py-3 snap-center">مهر</div>
+              <div class="font-vazir text-center py-3 snap-center">آبان</div>
+              <div class="font-vazir text-center py-3 snap-center">آذر</div>
+              <div class="font-vazir text-center py-3 snap-center">دی</div>
+              <div class="font-vazir text-center py-3 snap-center">بهمن</div>
+              <div class="font-vazir text-center py-3 snap-center">اسفند</div>
+
+            </div>
+
+            <!-- Year box -->
+            <div class="size-full flex flex-col border-r-1 border-r-gray-100 space-y-1 overflow-y-scroll snap snap-mandatory scrollbar-none">
+              <!-- Years -->
+               <div class="font-vazir py-3 snap-center text-center">1370</div>
+               <div class="font-vazir py-3 snap-center text-center">1371</div>
+               <div class="font-vazir py-3 snap-center text-center">1372</div>
+               <div class="font-vazir py-3 snap-center text-center">1373</div>
+               <div class="font-vazir py-3 snap-center text-center">1374</div>
+               <div class="font-vazir py-3 snap-center text-center">1375</div>
+               <div class="font-vazir py-3 snap-center text-center">1376</div>
+               <div class="font-vazir py-3 snap-center text-center">1377</div>
+               <div class="font-vazir py-3 snap-center text-center">1378</div>
+               <div class="font-vazir py-3 snap-center text-center">1379</div>
+               <div class="font-vazir py-3 snap-center text-center">1380</div>
+               <div class="font-vazir py-3 snap-center text-center">1381</div>
+               <div class="font-vazir py-3 snap-center text-center">1382</div>
+               <div class="font-vazir py-3 snap-center text-center">1383</div>
+               <div class="font-vazir py-3 snap-center text-center">1384</div>
+               <div class="font-vazir py-3 snap-center text-center">1385</div>
+               <div class="font-vazir py-3 snap-center text-center">1386</div>
+               <div class="font-vazir py-3 snap-center text-center">1387</div>
+               <div class="font-vazir py-3 snap-center text-center">1388</div>
+               <div class="font-vazir py-3 snap-center text-center">1389</div>
+               <div class="font-vazir py-3 snap-center text-center">1390</div>
+            </div>
+          </div>
+
+
+
+        </div>
+       </div>
 
     </div>
   </div>

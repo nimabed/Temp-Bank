@@ -1,4 +1,4 @@
-// let step = 1;
+// let step = 6;
 
 // let stepList = document.querySelectorAll(".step");
 
