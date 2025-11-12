@@ -1,16 +1,131 @@
-// let step = 6;
+let mainContainer = document.querySelector(".js-main-container");
+let btnSignup = document.querySelector(".js-btn-signup");            //step 1
+let btnStart = document.querySelector(".js-btn-start");              //step 2
+let termsCheck = document.querySelector(".js-terms-check");          //step 3
+let btnContinue = document.querySelector(".js-btn-continue");        //step 3
+let phoneInput = document.querySelector(".js-phone-input");          //step 4
+let btnNext4 = document.querySelector(".js-btn-next4");              //step 4
+const verifyInputs = document.querySelectorAll(".js-verify-input");  //step 5
+let btnNext5 = document.querySelector(".js-btn-next5");              //step 5
+let btnNext6 = document.querySelector(".js-btn-next6");              //step 6
+let idInput = document.querySelector(".js-id-input");                //step 7
+let btnNext7 = document.querySelector(".js-btn-next7");              //step 7
 
-// let stepList = document.querySelectorAll(".step");
+let step = 0;
 
-// console.log(stepList);
+// All steps
+let stepList = document.querySelectorAll(".step");
 
-// stepList.forEach((state, index) => {
-//   // if (step === index) {
-//     // state.classList.add('block');
-//   state.classList.toggle('!block', step === index);
-//   // }
-//   // }else {
-//   //   state.classList.add('hidden');
-//   //   state.classList.remove('block');
-//   // }
-// })
+// Loading steps function
+function loadStep() {
+  mainContainer.classList.toggle('!bg-blue-400', !step);
+  stepList.forEach((state, index) => {
+    state.classList.toggle('!block', step === index);
+  })
+}
+
+loadStep();
+
+
+//STEP 1: Sign up button event
+btnSignup.addEventListener('click', () => {
+  step++;
+  loadStep();
+});
+
+// STEP 2: Start button event
+btnStart.addEventListener('click', () => {
+  step++;
+  loadStep();
+})
+
+// STEP 3: Terms check and continue button events
+termsCheck.addEventListener('click', () => {
+  // console.log(termsCheck.checked);
+  termsCheck.checked 
+    ? btnContinue.classList.add('bg-blue-500', 'cursor-pointer', 'hover:bg-blue-500/90')
+    : btnContinue.classList.remove('bg-blue-500', 'cursor-pointer', 'hover:bg-blue-500/90');
+})
+
+btnContinue.addEventListener('click', () => {
+  if (termsCheck.checked) {
+    step++;
+    loadStep();
+  }
+})
+
+// STEP 4: Phone number input and next button events
+phoneInput.addEventListener('input', () => {
+  if (phoneInput.value.length > 0) {
+    phoneInput.style.unicodeBidi = 'normal';
+    if (phoneInput.value.length === 11) {
+      btnNext4.classList.add('bg-blue-500', 'cursor-pointer', 'hover:bg-blue-500/90');
+    } else {
+        btnNext4.classList.remove('bg-blue-500', 'cursor-pointer', 'hover:bg-blue-500/90');
+    }
+  } else {
+      phoneInput.style.unicodeBidi = 'bidi-override';
+  }
+})
+
+btnNext4.addEventListener('click', () => {
+  if (btnNext4.classList.contains('cursor-pointer')) {
+    phoneInput.value = '';
+    step++;
+    loadStep();
+  }
+})
+
+// STEP 5: Verification code inputs and next button events
+function inputValueCheck() {
+  for(let i=0; i < verifyInputs.length; i++) {
+    if (verifyInputs[i].value.length !== 1) {
+      return false;
+    }
+  }
+  return true;
+}
+
+verifyInputs.forEach((item) => {
+  item.addEventListener('input', () => {
+    if (inputValueCheck()) {
+      btnNext5.classList.add('bg-blue-500', 'cursor-pointer', 'hover:bg-blue-500/90');
+    }else {
+      btnNext5.classList.remove('bg-blue-500', 'cursor-pointer', 'hover:bg-blue-500/90');
+    }
+  });
+})
+
+btnNext5.addEventListener('click', () => {
+  if (btnNext5.classList.contains('cursor-pointer')) {
+    verifyInputs.forEach((item) => {
+      item.value = '';
+    })
+    step++;
+    loadStep();
+  }
+})
+
+// STEP 6: Next button event
+btnNext6.addEventListener('click', () => {
+  step++;
+  loadStep();
+})
+
+// STEP 7: Personal ID input and next button events
+idInput.addEventListener('input', () => {
+  if (idInput.value.length === 10) {
+    btnNext7.classList.add('bg-blue-500', 'cursor-pointer', 'hover:bg-blue-500/90');
+  }else {
+    btnNext7.classList.remove('bg-blue-500', 'cursor-pointer', 'hover:bg-blue-500/90');
+  }
+})
+
+btnNext7.addEventListener('click', () => {
+  if (btnNext7.classList.contains('cursor-pointer')) {
+    idInput.value = '';
+    step++;
+    loadStep();
+  }
+})
+

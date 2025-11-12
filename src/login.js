@@ -1,11 +1,11 @@
-const passwordInput = document.querySelector('#password');
-const userInput = document.querySelector('#username');
-const inputsWrapper = document.querySelector('#inputsWrapper');
-const toggleIcon = document.querySelector('#toggleIcon');
-const loginBtn = document.querySelector('#loginBtn');
-const btnIcon = document.querySelector('#btnIcon');
-const btnText = document.querySelector('#btnText');
-const errorMsg = document.querySelector('#errorMsg');
+let passwordInput = document.querySelector('#password');
+let userInput = document.querySelector('#username');
+let inputsWrapper = document.querySelector('#inputsWrapper');
+let toggleIcon = document.querySelector('#toggleIcon');
+let loginBtn = document.querySelector('#loginBtn');
+let btnIcon = document.querySelector('#btnIcon');
+let btnText = document.querySelector('#btnText');
+let errorMsg = document.querySelector('#errorMsg');
 let isVisible = false;
 
 // Check if username input is empty or not
