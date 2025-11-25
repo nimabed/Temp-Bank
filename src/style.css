@@ -40,3 +40,11 @@
 .noFingerprint {
   @apply py-3 bg-[#bfccd4];
 }
+
+.wheelItem {
+  @apply font-vazir text-center py-3 snap-center;
+}
+
+.active {
+  @apply border-y border-y-gray-100 bg-gray-200 font-bold; 
+}

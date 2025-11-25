@@ -258,7 +258,7 @@
         <!-- Middle section -->
         <div class="relative mt-10">
           <span class="font-vazir font-semibold text-gray-700">کد معرف خود را وارد کنید (اختیاری)</span>
-          <input class="w-full border-2 border-sky-600 py-3 pr-11 mt-4 rounded-lg bg-gray-100 focus:outline-1 focus:outline-sky-600 placeholder:font-vazir placeholder:text-[16px]" type="text" placeholder="مانند: MDMGKP ">
+          <input class="w-full border-2 border-sky-600 py-3 pr-11 mt-4 rounded-lg bg-gray-100 focus:outline-1 focus:outline-sky-600 placeholder:font-vazir placeholder:text-[16px] js-rep-input" type="text" placeholder="مانند: MDMGKP ">
           <img class="absolute bottom-3 right-3 w-[7%]" src="mail1.png" alt="mail">
           <img class="absolute bottom-2 left-2 w-[9%]" src="document.png" alt="document">
         </div>
@@ -285,7 +285,7 @@
         </div>    
         <!-- Middle section -->
         <div class="relative mt-10">
-          <span class="font-vazir font-semibold text-gray-700">کد معرف خود را وارد کنید (اختیاری)</span>
+          <span class="font-vazir font-semibold text-gray-700">کد ملی خود را وارد کنید</span>
           <input class="w-full border-2 border-sky-600 py-3 pr-12 mt-4 rounded-lg focus:outline-1 bg-gray-100 focus:outline-sky-600 placeholder:font-vazir placeholder:text-[16px] js-id-input" type="text" placeholder="کد ملی ۱۰ رقمی">
           <img class="absolute bottom-2.5 right-3 w-[8%]" src="contact.png" alt="contact">
         </div>
@@ -324,13 +324,14 @@
             </span>
           </div>  
           <!-- Snap scroll date box -->
-          <div class="h-[250px] flex border-t-1 border-t-gray-100 pt-3">
-            <!-- Days box -->
-            <div class="size-full flex flex-col border-l-1 border-l-gray-100 space-y-1 snap-y overflow-y-scroll snap-mandatory scrollbar-none">
-              <!-- Days -->
-              <div class="font-vazir py-3 text-center snap-center">1</div>
-              <div class="font-vazir py-3 text-center snap-center">2</div>
-              <div class="font-vazir py-3 text-center snap-center">3</div>
+          <div class="flex border-t border-t-gray-100 pt-3">
+            <!-- Days wheel -->
+            <div class="relative h-[250px] w-full flex flex-col border-l border-l-gray-100 space-y-1 snap-y overflow-y-scroll snap-mandatory scrollbar-none js-daysWheel">
+             
+              <div class="font-vazir py-3 text-center snap-center"></div>
+              <div class="font-vazir py-3 text-center snap-center"></div>
+              <div class="font-vazir py-3 text-center snap-center"></div>
+              <!--<div class="font-vazir py-3 text-center snap-center">3</div>
               <div class="font-vazir py-3 text-center snap-center">4</div>
               <div class="font-vazir py-3 text-center snap-center">5</div>
               <div class="font-vazir py-3 text-center snap-center">6</div>
@@ -355,35 +356,37 @@
               <div class="font-vazir py-3 text-center snap-center">25</div>
               <div class="font-vazir py-3 text-center snap-center">26</div>
               <div class="font-vazir py-3 text-center snap-center">27</div>
-              <div class="font-vazir py-3 text-center snap-center">28</div>
-              <div class="font-vazir py-3 text-center snap-center">29</div>
-              <div class="font-vazir py-3 text-center snap-center">30</div>
+              <div class="font-vazir py-3 text-center snap-center">28</div>-->
+              <!-- <div class="font-vazir py-3 text-center snap-center"></div>
+              <div class="font-vazir py-3 text-center snap-center"></div>  -->
             </div>
 
-            <!-- Months box -->
-            <div class="size-full flex flex-col space-y-1 overflow-y-scroll snap snap-mandatory scrollbar-none">
+            <!-- Months wheel -->
+            <div class="relative h-[250px] w-full flex flex-col space-y-1 overflow-y-scroll snap snap-mandatory scrollbar-none js-monthsWheel">
               <!-- Months -->
-              <div class="font-vazir text-center py-3 snap-center">فروردین</div>
-              <div class="font-vazir text-center py-3 snap-center">اردیبهشت</div>
-              <div class="font-vazir text-center py-3 snap-center">خرداد</div>
+              <div class="font-vazir text-center py-3 snap-center"></div>
+              <div class="font-vazir text-center py-3 snap-center"></div>
+              <div class="font-vazir text-center py-3 snap-center"></div>
+              <!--<div class="font-vazir text-center py-3 snap-center">خرداد</div>
               <div class="font-vazir text-center py-3 snap-center">تیر</div>
               <div class="font-vazir text-center py-3 snap-center">مرداد</div>
               <div class="font-vazir text-center py-3 snap-center">شهریور</div>
               <div class="font-vazir text-center py-3 snap-center">مهر</div>
               <div class="font-vazir text-center py-3 snap-center">آبان</div>
               <div class="font-vazir text-center py-3 snap-center">آذر</div>
-              <div class="font-vazir text-center py-3 snap-center">دی</div>
-              <div class="font-vazir text-center py-3 snap-center">بهمن</div>
-              <div class="font-vazir text-center py-3 snap-center">اسفند</div>
+              <div class="font-vazir text-center py-3 snap-center">دی</div>-->
+              <!-- <div class="font-vazir text-center py-3 snap-center"></div>
+              <div class="font-vazir text-center py-3 snap-center"></div> -->
 
             </div>
 
-            <!-- Year box -->
-            <div class="size-full flex flex-col border-r-1 border-r-gray-100 space-y-1 overflow-y-scroll snap snap-mandatory scrollbar-none">
+            <!-- Year wheel -->
+            <div class="relative h-[250px] w-full flex flex-col border-r border-r-gray-100 space-y-1 overflow-y-scroll snap snap-mandatory scrollbar-none js-yearsWheel">
               <!-- Years -->
-               <div class="font-vazir py-3 snap-center text-center">1370</div>
-               <div class="font-vazir py-3 snap-center text-center">1371</div>
-               <div class="font-vazir py-3 snap-center text-center">1372</div>
+               <div class="font-vazir py-3 snap-center text-center"></div>
+               <div class="font-vazir py-3 snap-center text-center"></div>
+               <div class="font-vazir py-3 snap-center text-center"></div>
+               <!--<div class="font-vazir py-3 snap-center text-center">1372</div>
                <div class="font-vazir py-3 snap-center text-center">1373</div>
                <div class="font-vazir py-3 snap-center text-center">1374</div>
                <div class="font-vazir py-3 snap-center text-center">1375</div>
@@ -399,9 +402,9 @@
                <div class="font-vazir py-3 snap-center text-center">1385</div>
                <div class="font-vazir py-3 snap-center text-center">1386</div>
                <div class="font-vazir py-3 snap-center text-center">1387</div>
-               <div class="font-vazir py-3 snap-center text-center">1388</div>
-               <div class="font-vazir py-3 snap-center text-center">1389</div>
-               <div class="font-vazir py-3 snap-center text-center">1390</div>
+               <div class="font-vazir py-3 snap-center text-center">1388</div>-->
+               <!-- <div class="font-vazir py-3 snap-center text-center"></div>
+               <div class="font-vazir py-3 snap-center text-center"></div>  -->
             </div>
           </div>
         </div>
@@ -476,7 +479,7 @@
 
        </div>
 
-      <!-- -----STEP 11: Account completion info----- -->
+      <!-- ----- STEP 11: Roadmap info ----- -->
       <div class="step hidden">
         <!-- Top section -->
         <div class="flex justify-between">
@@ -564,10 +567,102 @@
         </div>
       </div>
 
+      <!-- -----STEP 12: Created account successfully----- -->
+      <div class="step hidden">
+        <!-- Top section -->
+        <div class="flex justify-between">
+          <a href="#">
+            <i class="fa-solid fa-xmark fa-xl text-blue-500"></i>
+          </a>
+          <a href="#">
+            <i class="fa-solid fa-circle-question fa-xl text-blue-500"></i>
+          </a>
+        </div>
+        <!-- Title section -->
+        <div class="mt-10">
+          <span class="block font-vazir font-extrabold text-[25px] mb-px">بازکردن حساب در بلو</span>
+          <span class="font-vazir text-gray-700">تکمیل مراحل زیر، فقط چند دقیقه زمان نیاز دارد</span>
+        </div>
+        <!-- Middle section -->
+        <div class="relative flex flex-col items-center space-y-3 mt-6 mr-2">
+          <!-- Progress line -->
+          <span class="absolute bg-gray-300 right-0 top-3 w-0.5 h-[90%] -z-1"></span>
+
+          <div class="self-start">
+            <div class="flex items-start space-x-3">
+              <!-- Icon -->
+              <div
+                class="relative size-6 aspect-square rounded-full mt-3 -mr-[11px] outline-8 outline-white border-2 border-teal-600 bg-teal-600">
+                <img class="" src="check-green.png" alt="check-green">
+              </div>
+
+              <!-- Text -->
+              <div class="mt-2">
+                <span class="font-vazir block font-semibold  text-teal-600">تکمیل حساب کاربری</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="self-start mt-2 ">
+            <div class="flex items-start space-x-3">
+              <!-- Icon -->
+              <div
+                class="size-6 border-2 outline-8 aspect-square rounded-full mt-3 -mr-[11px] bg-white border-black outline-white">
+                <img class="relative w-1/2 mx-auto top-1/2 -translate-y-1/2" src="circle-black.png" alt="circle-black">
+              </div>
+
+              <!-- Text -->
+              <div class="mt-2">
+                <span class="font-vazir block font-bold text-xl">شناسایی هویت شما</span>
+                <span class="font-vazir text-[15px] text-gray-700">این مرحله شامل انتخاب شغل و ارسال ویدیو از خودتان می&zwnj;باشد.</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="self-start mt-2">
+            <div class="flex items-start space-x-3">
+              <!-- Icon -->
+              <div
+                class="size-6 aspect-square rounded-full mt-3 -mr-[11px] border-2 border-white outline-8 outline-white bg-white">
+                <img class="relative mx-auto top-1/2 -translate-y-1/2" src="circle-gray.png" alt="circle-gray">
+              </div>
+
+              <!-- Text -->
+              <div class="mt-2">
+                <span class="font-vazir block font-semibold text-gray-400">بررسی اطلاعات شما توسط بلو</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="self-start mt-2">
+            <div class="flex items-start space-x-3">
+              <!-- Icon                -->
+              <div
+                class="size-6 aspect-square rounded-full mt-3 -mr-[11px] border-2 border-white outline-8 outline-white bg-white">
+                <img class="relative mx-auto top-1/2 -translate-y-1/2" src="circle-gray.png" alt="circle-gray">
+              </div>
+
+              <!-- Text -->
+              <div class="mt-2">
+                <span class="font-vazir block font-semibold text-gray-400">سفارش رایگان بلوکارت</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Footer section -->
+        <div class="absolute bottom-8 w-full">
+          <button id="continueBtn" class="w-full py-3 text-white font-vazir font-semibold bg-blue-500  rounded-xl cursor-pointer">ادامه</button>
+        </div>
+      </div>
+
+
+
+
     </div>
   </div>
 
-  <script src="./src/signup.js"></script>
+  <!-- <script src="./src/wheelSnap.js"></script> -->
+  <script type="module" src="./src/signup.js"></script>
 </body>
 
 </html>

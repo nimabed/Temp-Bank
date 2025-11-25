@@ -1,3 +1,5 @@
+import { createWheelItems } from './wheelSnap.js';
+ 
 let mainContainer = document.querySelector(".js-main-container");
 let btnSignup = document.querySelector(".js-btn-signup");            //step 1
 let btnStart = document.querySelector(".js-btn-start");              //step 2
@@ -8,10 +10,14 @@ let btnNext4 = document.querySelector(".js-btn-next4");              //step 4
 const verifyInputs = document.querySelectorAll(".js-verify-input");  //step 5
 let btnNext5 = document.querySelector(".js-btn-next5");              //step 5
 let btnNext6 = document.querySelector(".js-btn-next6");              //step 6
+let repInput = document.querySelector(".js-rep-input");              //step 6
 let idInput = document.querySelector(".js-id-input");                //step 7
 let btnNext7 = document.querySelector(".js-btn-next7");              //step 7
+let daysContainer = document.querySelector(".js-daysWheel");         //step 8
+let monthsContainer = document.querySelector(".js-monthsWheel");     //step 8
+let yearsContainer = document.querySelector(".js-yearsWheel");       //step 8
 
-let step = 0;
+let step = 11;
 
 // All steps
 let stepList = document.querySelectorAll(".step");
@@ -27,7 +33,7 @@ function loadStep() {
 loadStep();
 
 
-//STEP 1: Sign up button event
+// STEP 1: Sign up button event
 btnSignup.addEventListener('click', () => {
   step++;
   loadStep();
@@ -106,8 +112,9 @@ btnNext5.addEventListener('click', () => {
   }
 })
 
-// STEP 6: Next button event
+// STEP 6: Represetative code next button event
 btnNext6.addEventListener('click', () => {
+  repInput.value = '';
   step++;
   loadStep();
 })
@@ -128,4 +135,15 @@ btnNext7.addEventListener('click', () => {
     loadStep();
   }
 })
+
+// STEP 8: Creating date's wheel and next button event
+const days = Array.from({ length: 31 }, (_, i) => i + 1);
+const months = [
+  'فروردین', 'اردیبهشت', 'خرداد', 'تیر', 'مرداد', 'شهریور', 'مهر', 'آبان', 'آذر', 'دی', 'بهمن', 'اسفند'
+]
+const years = Array.from({ length: 61}, (_, i) => 1330 + i);
+
+createWheelItems(daysContainer, days);
+createWheelItems(monthsContainer, months);
+createWheelItems(yearsContainer, years);
 
