@@ -1,4 +1,4 @@
-
+let userScrolling = false;
 
 export function createWheelItems(container, values) {
   values.forEach((item) => {
@@ -9,105 +9,73 @@ export function createWheelItems(container, values) {
   })
   const el = document.createElement('div');
   el.className = 'wheelItem';
+  el.classList.add('!py-3');
 
   container.appendChild(el);
   container.appendChild(el.cloneNode(true));
   container.appendChild(el.cloneNode(true));
-
+  container.appendChild(el.cloneNode(true));
+  container.appendChild(el.cloneNode(true));
 
   container.scrollTo(0, container.scrollHeight / 2 - container.clientHeight / 2);
 
-  container.addEventListener('scroll', () => selectActive(container));
+  container.addEventListener('scroll', () => {
+    updateActiveElement(container);
+    if (userScrolling) {
+      updateDate();
+    }
+    
+  });
 
-  selectActive(container);
 }
 
 
-function selectActive(container) {
+function updateActiveElement(container) {
+  container.addEventListener('wheel', () => {
+    userScrolling = true;
+  })
+
   const childElements = container.querySelectorAll('.wheelItem');
-
-  // console.log(container.getBoundingClientRect());
-  // console.log(container.scrollHeight);
-
   const containerCenter = Math.abs(container.scrollTop + container.offsetHeight / 2);
 
   childElements.forEach((el) => {
-    const centerY = el.offsetTop + el.offsetHeight / 2;
+    const elHeight = el.offsetHeight;
+    const centerY = el.offsetTop + elHeight / 2;
+    let interval = Math.abs(containerCenter - centerY);
 
-    if (Math.abs(containerCenter - centerY) <= 24) {
-      el.classList.add('active');
-    }else {
-      el.classList.remove('active');
-    }
+    el.classList.toggle('wheelItem-active', interval <= elHeight / 2);
+
+    el.classList.toggle('wheelItem-l1', interval > 21 && interval <= 62);
+
+    el.classList.toggle('wheelItem-l2', interval > 62 && interval <= 98);
+
+    el.classList.toggle('wheelItem-l3', interval > 98 && interval <= 132);
 
   })
 }
 
+function updateDate() {
+  let day;
+  let month;
+  let year;
 
+  // Containers
+  let daysContainer = document.querySelector(".js-daysWheel");         
+  let monthsContainer = document.querySelector(".js-monthsWheel");     
+  let yearsContainer = document.querySelector(".js-yearsWheel"); 
+  let dateInput = document.querySelector(".js-dateInput"); 
+  // let btnNext8 = document.querySelector(".js-btn-next8");
+  
+  // Day/Month/Year elements
+  let dayEl = daysContainer.querySelector('.wheelItem-active');
+  let monthEl = monthsContainer.querySelector('.wheelItem-active');
+  let yearEl = yearsContainer.querySelector('.wheelItem-active');
 
+  if (dayEl) day = dayEl.innerText;
+  if (monthEl) month = monthEl.innerText;
+  if (yearEl) year = yearEl.innerText;
 
-
-
-// let wheelsContainer = document.querySelector('.js-wheels-container');
-
-// let daysWheel = document.querySelector('.js-daysWheel');
-// let monthsWheel = document.querySelector('.js-monthsWheel');
-// let yearsWheel = document.querySelector('.js-yearsWheel');
-
-// console.log(2000 < Infinity);
-// const containerCenter = daysWheel.getBoundingClientRect().top + daysWheel.clientHeight / 2;
-// daysWheel.scrollTo(0, containerCenter);
-// console.log(daysWheel.scrollTop);
-
-// const daysList = [...daysWheel.children];
-// const monthsList = [...monthsWheel.children];
-// const yearsList = [...yearsWheel.children];
-
-// console.log(daysWheel.clientHeight);
-// console.log(daysList[1].offsetTop);
-
-// daysWheel.addEventListener('scroll', () => {
-//   daysList.forEach((el) => {
-//     let elementRect = el.getBoundingClientRect();
-//     let elementCenter = elementRect.top + elementRect.height / 2;
-
-//     if ((Math.abs(elementCenter - containerCenter)) < 24) {
-//       el.classList.add('bg-blue-500', 'text-red-500');
-//     } else {
-//       el.classList.remove('bg-blue-500', 'text-red-500');
-//     }
-//   })
-
-// })
-
-// monthsWheel.addEventListener('scroll', () => {
-//   monthsList.forEach((el) => {
-//     let elementRect = el.getBoundingClientRect();
-//     let elementCenter = elementRect.top + elementRect.height / 2;
-
-//     if ((Math.abs(elementCenter - containerCenter)) < 24) {
-//       el.classList.add('bg-blue-500', 'text-red-500');
-//     } else {
-//       el.classList.remove('bg-blue-500', 'text-red-500');
-//     }
-//   })
-
-// })
-
-// yearsWheel.addEventListener('scroll', () => {
-//   yearsList.forEach((el) => {
-//     let elementRect = el.getBoundingClientRect();
-//     let elementCenter = elementRect.top + elementRect.height / 2;
-
-//     if ((Math.abs(elementCenter - containerCenter)) <= 20) {
-//       el.classList.add('bg-blue-500', 'text-red-500');
-//     } else {
-//       el.classList.remove('bg-blue-500', 'text-red-500');
-//     }
-//   })
-
-// })
-
-// console.log(daysWheel.scrollHeight);
-// console.log([...daysWheel.children][0].getBoundingClientRect());
+  dateInput.value = `${day}/${month}/${year}`;
+  dateInput.dispatchEvent(new Event("input"));
+}
 

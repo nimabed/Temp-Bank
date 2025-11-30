@@ -16,8 +16,11 @@ let btnNext7 = document.querySelector(".js-btn-next7");              //step 7
 let daysContainer = document.querySelector(".js-daysWheel");         //step 8
 let monthsContainer = document.querySelector(".js-monthsWheel");     //step 8
 let yearsContainer = document.querySelector(".js-yearsWheel");       //step 8
+let dateInput = document.querySelector(".js-dateInput");             //step 8
+let btnNext8 = document.querySelector(".js-btn-next8");              //step 8
 
-let step = 11;
+
+let step = 8;
 
 // All steps
 let stepList = document.querySelectorAll(".step");
@@ -104,9 +107,7 @@ verifyInputs.forEach((item) => {
 
 btnNext5.addEventListener('click', () => {
   if (btnNext5.classList.contains('cursor-pointer')) {
-    verifyInputs.forEach((item) => {
-      item.value = '';
-    })
+    verifyInputs.forEach(item => item.value = '');
     step++;
     loadStep();
   }
@@ -137,13 +138,33 @@ btnNext7.addEventListener('click', () => {
 })
 
 // STEP 8: Creating date's wheel and next button event
-const days = Array.from({ length: 31 }, (_, i) => i + 1);
+function toPersian(num) {
+  return num.toString().replace(/\d/g, d => String.fromCharCode(0x06F0 + Number(d)));
+}
+
+const days = Array.from({ length: 31 }, (_, i) => toPersian(i + 1));
 const months = [
   'فروردین', 'اردیبهشت', 'خرداد', 'تیر', 'مرداد', 'شهریور', 'مهر', 'آبان', 'آذر', 'دی', 'بهمن', 'اسفند'
 ]
-const years = Array.from({ length: 61}, (_, i) => 1330 + i);
+const years = Array.from({ length: 61}, (_, i) => toPersian(1330 + i));
 
 createWheelItems(daysContainer, days);
 createWheelItems(monthsContainer, months);
 createWheelItems(yearsContainer, years);
+
+dateInput.addEventListener('input', () => {
+  if (dateInput.value.length > 0) {
+    btnNext8.classList.add('bg-blue-500', 'cursor-pointer', 'hover:bg-blue-500/90');
+  }else {
+    btnNext8.classList.remove('bg-blue-500', 'cursor-pointer', 'hover:bg-blue-500/90');
+  }
+})
+
+btnNext8.addEventListener('click', () => {
+  if (btnNext8.classList.contains('cursor-pointer')) {
+    dateInput.value = '';
+    step++;
+    loadStep();
+  }
+})
 

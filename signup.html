@@ -6,8 +6,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="src/style.css">
-  <title>Sign Up
-  </title>
+  <title>Sign Up</title>
 </head>
 
 <body>
@@ -312,99 +311,45 @@
         <!-- Middle section -->
         <div class="relative mt-10">
           <span class="font-vazir font-semibold text-gray-700">تاریخ تولد خود را وارد کنید</span>
-          <input class="w-full py-3 pr-12 mt-4 rounded-lg bg-gray-100 focus:outline-1 focus:outline-sky-600 placeholder:font-vazir placeholder:text-[16px]" type="text" placeholder="روز/ماه/سال">
+          <input class="w-full py-3 pr-12 mt-4 rounded-lg bg-gray-100 focus:outline-1 focus:outline-sky-600 font-vazir placeholder:font-vazir placeholder:text-[16px] js-dateInput" readonly type="text" placeholder="روز/ماه/سال">
           <img class="absolute bottom-2.5 right-3 w-[8%]" src="contact.png" alt="contact">
         </div>
         <!-- Bottom section -->
         <div class="absolute bottom-2 w-full">
           <!-- Next button -->
           <div class="w-full flex justify-end mb-5">
-            <span class="py-6 px-4 rounded-full text-center bg-[#bfccd4] text-white cursor-pointer">
+            <span class="py-6 px-4 rounded-full text-center bg-[#bfccd4] text-white js-btn-next8">
               <i class="fa-solid fa-arrow-left fa-2xl"></i>
             </span>
           </div>  
           <!-- Snap scroll date box -->
-          <div class="flex border-t border-t-gray-100 pt-3">
+          <div class="relative h-[250px] flex border-t border-t-gray-100">            
             <!-- Days wheel -->
-            <div class="relative h-[250px] w-full flex flex-col border-l border-l-gray-100 space-y-1 snap-y overflow-y-scroll snap-mandatory scrollbar-none js-daysWheel">
-             
-              <div class="font-vazir py-3 text-center snap-center"></div>
-              <div class="font-vazir py-3 text-center snap-center"></div>
-              <div class="font-vazir py-3 text-center snap-center"></div>
-              <!--<div class="font-vazir py-3 text-center snap-center">3</div>
-              <div class="font-vazir py-3 text-center snap-center">4</div>
-              <div class="font-vazir py-3 text-center snap-center">5</div>
-              <div class="font-vazir py-3 text-center snap-center">6</div>
-              <div class="font-vazir py-3 text-center snap-center">7</div>
-              <div class="font-vazir py-3 text-center snap-center">8</div>
-              <div class="font-vazir py-3 text-center snap-center">9</div>
-              <div class="font-vazir py-3 text-center snap-center">10</div>
-              <div class="font-vazir py-3 text-center snap-center">11</div>
-              <div class="font-vazir py-3 text-center snap-center">12</div>
-              <div class="font-vazir py-3 text-center snap-center">13</div>
-              <div class="font-vazir py-3 text-center snap-center">14</div>
-              <div class="font-vazir py-3 text-center snap-center">15</div>
-              <div class="font-vazir py-3 text-center snap-center">16</div>
-              <div class="font-vazir py-3 text-center snap-center">17</div>
-              <div class="font-vazir py-3 text-center snap-center">18</div>
-              <div class="font-vazir py-3 text-center snap-center">19</div>
-              <div class="font-vazir py-3 text-center snap-center">20</div>
-              <div class="font-vazir py-3 text-center snap-center">21</div>
-              <div class="font-vazir py-3 text-center snap-center">22</div>
-              <div class="font-vazir py-3 text-center snap-center">23</div>
-              <div class="font-vazir py-3 text-center snap-center">24</div>
-              <div class="font-vazir py-3 text-center snap-center">25</div>
-              <div class="font-vazir py-3 text-center snap-center">26</div>
-              <div class="font-vazir py-3 text-center snap-center">27</div>
-              <div class="font-vazir py-3 text-center snap-center">28</div>-->
-              <!-- <div class="font-vazir py-3 text-center snap-center"></div>
-              <div class="font-vazir py-3 text-center snap-center"></div>  -->
+            <div class="relative size-full border-l border-l-gray-200 snap-y overflow-y-scroll snap-mandatory scrollbar-none mt-2 js-daysWheel days">
+               <div class="py-3"></div>
+               <div class="py-3"></div>
+               <div class="py-3"></div>
+               <div class="py-3"></div>
+               <div class="py-3"></div>
+               <!-- <div class="line absolute w-full h-2 right-0 top-0 bg-red-500 z-10"></div> -->
             </div>
-
             <!-- Months wheel -->
-            <div class="relative h-[250px] w-full flex flex-col space-y-1 overflow-y-scroll snap snap-mandatory scrollbar-none js-monthsWheel">
+            <div class="relative size-full overflow-y-scroll snap-y snap-mandatory scrollbar-none mt-2 js-monthsWheel months">
               <!-- Months -->
-              <div class="font-vazir text-center py-3 snap-center"></div>
-              <div class="font-vazir text-center py-3 snap-center"></div>
-              <div class="font-vazir text-center py-3 snap-center"></div>
-              <!--<div class="font-vazir text-center py-3 snap-center">خرداد</div>
-              <div class="font-vazir text-center py-3 snap-center">تیر</div>
-              <div class="font-vazir text-center py-3 snap-center">مرداد</div>
-              <div class="font-vazir text-center py-3 snap-center">شهریور</div>
-              <div class="font-vazir text-center py-3 snap-center">مهر</div>
-              <div class="font-vazir text-center py-3 snap-center">آبان</div>
-              <div class="font-vazir text-center py-3 snap-center">آذر</div>
-              <div class="font-vazir text-center py-3 snap-center">دی</div>-->
-              <!-- <div class="font-vazir text-center py-3 snap-center"></div>
-              <div class="font-vazir text-center py-3 snap-center"></div> -->
-
+              <div class="py-3"></div>
+              <div class="py-3"></div>
+              <div class="py-3"></div>
+              <div class="py-3"></div>
+              <div class="py-3"></div>
             </div>
-
-            <!-- Year wheel -->
-            <div class="relative h-[250px] w-full flex flex-col border-r border-r-gray-100 space-y-1 overflow-y-scroll snap snap-mandatory scrollbar-none js-yearsWheel">
+            <!-- Years wheel -->
+            <div class="relative size-full border-r border-r-gray-200 overflow-y-scroll snap-y snap-mandatory scrollbar-none mt-2 js-yearsWheel years">
               <!-- Years -->
-               <div class="font-vazir py-3 snap-center text-center"></div>
-               <div class="font-vazir py-3 snap-center text-center"></div>
-               <div class="font-vazir py-3 snap-center text-center"></div>
-               <!--<div class="font-vazir py-3 snap-center text-center">1372</div>
-               <div class="font-vazir py-3 snap-center text-center">1373</div>
-               <div class="font-vazir py-3 snap-center text-center">1374</div>
-               <div class="font-vazir py-3 snap-center text-center">1375</div>
-               <div class="font-vazir py-3 snap-center text-center">1376</div>
-               <div class="font-vazir py-3 snap-center text-center">1377</div>
-               <div class="font-vazir py-3 snap-center text-center">1378</div>
-               <div class="font-vazir py-3 snap-center text-center">1379</div>
-               <div class="font-vazir py-3 snap-center text-center">1380</div>
-               <div class="font-vazir py-3 snap-center text-center">1381</div>
-               <div class="font-vazir py-3 snap-center text-center">1382</div>
-               <div class="font-vazir py-3 snap-center text-center">1383</div>
-               <div class="font-vazir py-3 snap-center text-center">1384</div>
-               <div class="font-vazir py-3 snap-center text-center">1385</div>
-               <div class="font-vazir py-3 snap-center text-center">1386</div>
-               <div class="font-vazir py-3 snap-center text-center">1387</div>
-               <div class="font-vazir py-3 snap-center text-center">1388</div>-->
-               <!-- <div class="font-vazir py-3 snap-center text-center"></div>
-               <div class="font-vazir py-3 snap-center text-center"></div>  -->
+               <div class="py-3"></div>
+               <div class="py-3"></div>
+               <div class="py-3"></div>
+               <div class="py-3"></div>
+               <div class="py-3"></div>
             </div>
           </div>
         </div>
