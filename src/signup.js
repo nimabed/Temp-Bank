@@ -1,6 +1,12 @@
 import { createWheelItems } from './wheelSnap.js';
  
-let mainContainer = document.querySelector(".js-main-container");
+let mainContainer = document.querySelector(".js-main-container");   
+let abortMsg = document.querySelector(".js-abort-message");         //abort message
+let btnAbortYes = abortMsg.querySelector(".js-btn-abort-yes");      // abort button yes
+let btnAbortNo = abortMsg.querySelector(".js-btn-abort-no");        // abort button no
+const closeButtons = document.querySelectorAll(".js-btn-close");    //close buttons
+
+
 let btnSignup = document.querySelector(".js-btn-signup");                   //step 1
 let btnStart = document.querySelector(".js-btn-start");                     //step 2
 let termsCheck = document.querySelector(".js-terms-check");                 //step 3
@@ -192,7 +198,6 @@ btnNext9.addEventListener('click', () => {
   }
 })
 
-
 // STEP 10: Password input and next button events
 function minCharsCheck(pass) {
   if (pass.length >= 8) {
@@ -256,9 +261,28 @@ btnNext10.addEventListener('click', () => {
   }
 })
 
-
 // STEP 11: Continue button event
 btnNext11.addEventListener('click', () => {
   step++;
   loadStep();
 })
+
+
+// EXTRA
+closeButtons.forEach((btn) => {
+  btn.addEventListener('click', () => {
+    abortMsg.classList.add('!block');
+  })
+})
+
+btnAbortYes.addEventListener('click', () => {
+  step = 0;
+  abortMsg.classList.remove('!block');
+  loadStep();
+})
+
+btnAbortNo.addEventListener('click', () => {
+  abortMsg.classList.remove('!block');
+})
+
+
