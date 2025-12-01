@@ -29,7 +29,6 @@ export function createWheelItems(container, values) {
 
 }
 
-
 function updateActiveElement(container) {
   container.addEventListener('wheel', () => {
     userScrolling = true;
