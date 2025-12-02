@@ -11,7 +11,10 @@
 
 <body>
   <!-- Main container -->
-  <div class="relative max-w-[440px] h-screen mx-auto  bg-gray-100/40 js-main-container">
+  <div class="relative max-w-[440px] h-screen mx-auto bg-gray-100/40 js-main-container">
+
+    <!-- Active row for wheel date picker -->
+    <div class="hidden absolute bottom-[104px] left-0 right-0 bg-slate-300/20 border-y border-y-gray-200 h-[42px] js-active-row"></div>
 
     <!-- Abort msg -->
     <div class="hidden absolute size-full bg-black/50 z-1 js-abort-message">
@@ -31,7 +34,6 @@
         </div>
       </div>
     </div>
-
 
     <!-- Steps wrapper -->
     <div class="relative w-[90%] h-screen mx-auto pt-10">
@@ -347,18 +349,17 @@
             </span>
           </div>  
           <!-- Snap scroll date box -->
-          <div class="relative h-[250px] flex border-t border-t-gray-100">            
+          <div class="relative h-[250px] flex border-t border-t-gray-100"> 
             <!-- Days wheel -->
-            <div class="relative size-full border-l border-l-gray-200 snap-y overflow-y-scroll snap-mandatory scrollbar-none mt-2 js-daysWheel days">
+            <div class="relative size-full border-l border-l-gray-200 snap-y overflow-y-scroll overflow-x-hidden scroll-smooth snap-mandatory scrollbar-none mt-2 js-daysWheel days">
                <div class="py-3"></div>
                <div class="py-3"></div>
                <div class="py-3"></div>
                <div class="py-3"></div>
                <div class="py-3"></div>
-               <!-- <div class="line absolute w-full h-2 right-0 top-0 bg-red-500 z-10"></div> -->
             </div>
             <!-- Months wheel -->
-            <div class="relative size-full overflow-y-scroll snap-y snap-mandatory scrollbar-none mt-2 js-monthsWheel months">
+            <div class="relative size-full overflow-y-scroll overflow-x-hidden snap-y scroll-smooth snap-mandatory scrollbar-none mt-2 js-monthsWheel months">
               <!-- Months -->
               <div class="py-3"></div>
               <div class="py-3"></div>
@@ -367,7 +368,7 @@
               <div class="py-3"></div>
             </div>
             <!-- Years wheel -->
-            <div class="relative size-full border-r border-r-gray-200 overflow-y-scroll snap-y snap-mandatory scrollbar-none mt-2 js-yearsWheel years">
+            <div class="relative size-full border-r border-r-gray-200 overflow-y-scroll scroll-smooth overflow-x-hidden snap-y snap-mandatory scrollbar-none mt-2 js-yearsWheel years">
               <!-- Years -->
                <div class="py-3"></div>
                <div class="py-3"></div>

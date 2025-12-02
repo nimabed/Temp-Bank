@@ -24,6 +24,7 @@ let monthsContainer = document.querySelector(".js-monthsWheel");            //st
 let yearsContainer = document.querySelector(".js-yearsWheel");              //step 8
 let dateInput = document.querySelector(".js-dateInput");                    //step 8
 let btnNext8 = document.querySelector(".js-btn-next8");                     //step 8
+let activeRow = document.querySelector(".js-active-row");                   //step 8
 let usernameInput = document.querySelector(".js-username-input");           //step 9
 let btnNext9 = document.querySelector(".js-btn-next9");                     //step 9
 let passwordInput = document.querySelector(".js-password-input");           //step 10
@@ -42,6 +43,7 @@ let stepList = document.querySelectorAll(".step");
 // Loading steps function
 function loadStep() {
   mainContainer.classList.toggle('!bg-blue-400', !step);
+  activeRow.classList.toggle('!block', step === 7);
   stepList.forEach((state, index) => {
     state.classList.toggle('!block', step === index);
   })

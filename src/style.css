@@ -42,21 +42,22 @@
 }
 
 .wheelItem {
-  @apply font-vazir text-center py-1 snap-center;
+  @apply font-vazir text-center py-[6px] snap-center;
 }
 
+
 .wheelItem-active {
-  @apply border-y border-y-gray-200 bg-gray-100 text-2xl transition-[font-size] duration-300; 
+  @apply scale-150 transition-all duration-300; 
 }
 
 .wheelItem-l1 {
-  @apply text-gray-500/80 text-[22px]; 
+  @apply scale-135 text-gray-500/80; 
 }
 
 .wheelItem-l2 {
-  @apply text-gray-500/60 text-xl; 
+  @apply scale-125 text-gray-500/60; 
 }
 
 .wheelItem-l3 {
-  @apply text-gray-500/20 text-[17px]; 
+  @apply scale-115 text-gray-500/20; 
 }

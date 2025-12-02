@@ -8,8 +8,7 @@ export function createWheelItems(container, values) {
     container.appendChild(element);
   })
   const el = document.createElement('div');
-  el.className = 'wheelItem';
-  el.classList.add('!py-3');
+  el.className = 'py-3';
 
   container.appendChild(el);
   container.appendChild(el.cloneNode(true));
@@ -44,11 +43,11 @@ function updateActiveElement(container) {
 
     el.classList.toggle('wheelItem-active', interval <= elHeight / 2);
 
-    el.classList.toggle('wheelItem-l1', interval > 21 && interval <= 62);
+    el.classList.toggle('wheelItem-l1', interval > 16 && interval <= elHeight + 16);
 
-    el.classList.toggle('wheelItem-l2', interval > 62 && interval <= 98);
+    el.classList.toggle('wheelItem-l2', interval > elHeight + 16 && interval <= elHeight * 2 + 16);
 
-    el.classList.toggle('wheelItem-l3', interval > 98 && interval <= 132);
+    el.classList.toggle('wheelItem-l3', interval > elHeight * 2 + 16 && interval <= elHeight * 3 + 16);
 
   })
 }
@@ -63,7 +62,6 @@ function updateDate() {
   let monthsContainer = document.querySelector(".js-monthsWheel");     
   let yearsContainer = document.querySelector(".js-yearsWheel"); 
   let dateInput = document.querySelector(".js-dateInput"); 
-  // let btnNext8 = document.querySelector(".js-btn-next8");
   
   // Day/Month/Year elements
   let dayEl = daysContainer.querySelector('.wheelItem-active');
