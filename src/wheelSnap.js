@@ -1,5 +1,3 @@
-let userScrolling = false;
-
 export function createWheelItems(container, values) {
   values.forEach((item) => {
     const element = document.createElement('div');
@@ -18,20 +16,11 @@ export function createWheelItems(container, values) {
 
   container.scrollTo(0, container.scrollHeight / 2 - container.clientHeight / 2);
 
-  container.addEventListener('scroll', () => {
-    updateActiveElement(container);
-    if (userScrolling) {
-      updateDate();
-    }
-    
-  });
-
-}
+  container.addEventListener('scroll', () => updateActiveElement(container));
+}    
 
 function updateActiveElement(container) {
-  container.addEventListener('wheel', () => {
-    userScrolling = true;
-  })
+  container.addEventListener('wheel', () => updateDate()); 
 
   const childElements = container.querySelectorAll('.wheelItem');
   const containerCenter = Math.abs(container.scrollTop + container.offsetHeight / 2);
@@ -75,4 +64,3 @@ function updateDate() {
   dateInput.value = `${day}/${month}/${year}`;
   dateInput.dispatchEvent(new Event("input"));
 }
-

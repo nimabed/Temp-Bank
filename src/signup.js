@@ -89,12 +89,12 @@ phoneInput.addEventListener('input', () => {
     }
   } else {
       phoneInput.style.unicodeBidi = 'bidi-override';
+      btnNext4.classList.remove('bg-blue-500', 'cursor-pointer', 'hover:bg-blue-500/90');
   }
 })
 
 btnNext4.addEventListener('click', () => {
   if (btnNext4.classList.contains('cursor-pointer')) {
-    phoneInput.value = '';
     step++;
     loadStep();
   }
@@ -122,7 +122,6 @@ verifyInputs.forEach((item) => {
 
 btnNext5.addEventListener('click', () => {
   if (btnNext5.classList.contains('cursor-pointer')) {
-    verifyInputs.forEach(item => item.value = '');
     step++;
     loadStep();
   }
@@ -130,7 +129,6 @@ btnNext5.addEventListener('click', () => {
 
 // STEP 6: Represetative code next button event
 btnNext6.addEventListener('click', () => {
-  repInput.value = '';
   step++;
   loadStep();
 })
@@ -146,7 +144,6 @@ idInput.addEventListener('input', () => {
 
 btnNext7.addEventListener('click', () => {
   if (btnNext7.classList.contains('cursor-pointer')) {
-    idInput.value = '';
     step++;
     loadStep();
   }
@@ -177,7 +174,6 @@ dateInput.addEventListener('input', () => {
 
 btnNext8.addEventListener('click', () => {
   if (btnNext8.classList.contains('cursor-pointer')) {
-    dateInput.value = '';
     step++;
     loadStep();
   }
@@ -194,7 +190,7 @@ usernameInput.addEventListener('input', () => {
 
 btnNext9.addEventListener('click', () => {
   if (btnNext9.classList.contains('cursor-pointer')) {
-    usernameInput.value = '';
+    // usernameInput.value = '';
     step++;
     loadStep();
   }
@@ -257,7 +253,7 @@ passwordInput.addEventListener('input', () => {
 
 btnNext10.addEventListener('click', () => {
   if (btnNext10.classList.contains('cursor-pointer')) {
-    passwordInput.value = '';
+    // passwordInput.value = '';
     step++;
     loadStep();
   }
@@ -270,7 +266,16 @@ btnNext11.addEventListener('click', () => {
 })
 
 
-// EXTRA
+// Close buttons
+function resetInputs() {
+  step = 0;
+  termsCheck.checked = false;     //step 3
+  document.querySelectorAll('input').forEach((item) => {
+    item.value = '';
+    item.dispatchEvent(new Event("input"));
+  })
+}
+
 closeButtons.forEach((btn) => {
   btn.addEventListener('click', () => {
     abortMsg.classList.add('!block');
@@ -278,7 +283,7 @@ closeButtons.forEach((btn) => {
 })
 
 btnAbortYes.addEventListener('click', () => {
-  step = 0;
+  resetInputs();
   abortMsg.classList.remove('!block');
   loadStep();
 })
