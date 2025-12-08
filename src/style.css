@@ -61,3 +61,11 @@
 .wheelItem-l3 {
   @apply scale-115 text-gray-500/20; 
 }
+
+.hide {
+  @apply absolute invisible opacity-0 pointer-events-none;
+}
+
+.active {
+  @apply static visible opacity-100 pointer-events-auto;
+}

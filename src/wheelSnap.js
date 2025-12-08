@@ -14,13 +14,14 @@ export function createWheelItems(container, values) {
   container.appendChild(el.cloneNode(true));
   container.appendChild(el.cloneNode(true));
 
-  container.scrollTo(0, container.scrollHeight / 2 - container.clientHeight / 2);
-
+  // container.scrollTo(0, container.scrollHeight / 2 - container.clientHeight / 2);
+  
   container.addEventListener('scroll', () => updateActiveElement(container));
 }    
 
 function updateActiveElement(container) {
   container.addEventListener('wheel', () => updateDate()); 
+
 
   const childElements = container.querySelectorAll('.wheelItem');
   const containerCenter = Math.abs(container.scrollTop + container.offsetHeight / 2);
@@ -64,3 +65,4 @@ function updateDate() {
   dateInput.value = `${day}/${month}/${year}`;
   dateInput.dispatchEvent(new Event("input"));
 }
+
