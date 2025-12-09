@@ -208,7 +208,7 @@
         <!-- Middle section -->
         <div class="relative mt-10">
           <span class="font-vazir font-semibold text-gray-700">شماره تلفن همراه خود را وارد کنید</span>
-          <input class="w-full border-2 border-sky-600 py-3 pr-11 mt-4 rounded-lg bg-gray-100 focus:outline-1 focus:outline-sky-600 [unicode-bidi:bidi-override] placeholder:font-vazir js-phone-input" type="text" placeholder="مانند: ۹۸۷۶ ۵۴۳ ۲۱۹۰">
+          <input class="w-full border-2 border-sky-600 py-3 pr-11 mt-4 rounded-lg bg-gray-100 focus:outline-1 focus:outline-sky-600 placeholder:font-vazir js-phone-input" type="text" pattern="۰۹[\u06F0-\u06F9]{9}" required>
           <img class="absolute bottom-2 right-2 w-[9%]" src="simcard.png" alt="simcard">
   
         </div>
@@ -235,14 +235,14 @@
         </div>
         <!-- Middle section -->
         <div class="relative mt-10">
-          <span class="font-vazir font-semibold text-gray-700">کد تایید ارسال شده به <span class="[unicode-bidi:bidi-override]">۹۸۷۶ ۵۴۳ ۲۱۹۰</span> را وارد کنید</span>
+          <span class="font-vazir font-semibold text-gray-700">کد تایید ارسال شده به <span class="js-entered-num"></span> را وارد کنید</span>
           <div class="mt-4 flex justify-between">
-            <input type="text" class="w-15 h-13 bg-gray-100 font-vazir text-center rounded-xl focus:outline-none focus:caret-transparent focus:ring-3 js-verify-input" />
-            <input type="text" class="w-15 h-13 bg-gray-100 font-vazir text-center rounded-xl focus:outline-none focus:caret-transparent focus:ring-3 js-verify-input" />
-            <input type="text" class="w-15 h-13 bg-gray-100 font-vazir text-center rounded-xl focus:outline-none focus:caret-transparent focus:ring-3 js-verify-input" />
-            <input type="text" class="w-15 h-13 bg-gray-100 font-vazir text-center rounded-xl focus:outline-none focus:caret-transparent focus:ring-3 js-verify-input" />
-            <input type="text" class="w-15 h-13 bg-gray-100 font-vazir text-center rounded-xl focus:outline-none focus:caret-transparent focus:ring-3 js-verify-input" />
-            <input type="text" class="w-15 h-13 bg-gray-100 font-vazir text-center rounded-xl focus:outline-none focus:caret-transparent focus:ring-3 js-verify-input" />
+            <input type="text" class="w-15 h-13 bg-gray-100 font-vazir text-center rounded-xl focus:outline-none focus:caret-transparent focus:ring-3 js-verify-input" pattern="^[0-9]$" required  />
+            <input type="text" class="w-15 h-13 bg-gray-100 font-vazir text-center rounded-xl focus:outline-none focus:caret-transparent focus:ring-3 js-verify-input" pattern="^[0-9]$" required />
+            <input type="text" class="w-15 h-13 bg-gray-100 font-vazir text-center rounded-xl focus:outline-none focus:caret-transparent focus:ring-3 js-verify-input" pattern="^[0-9]$" required />
+            <input type="text" class="w-15 h-13 bg-gray-100 font-vazir text-center rounded-xl focus:outline-none focus:caret-transparent focus:ring-3 js-verify-input" pattern="^[0-9]$" required />
+            <input type="text" class="w-15 h-13 bg-gray-100 font-vazir text-center rounded-xl focus:outline-none focus:caret-transparent focus:ring-3 js-verify-input" pattern="^[0-9]$" required />
+            <input type="text" class="w-15 h-13 bg-gray-100 font-vazir text-center rounded-xl focus:outline-none focus:caret-transparent focus:ring-3 js-verify-input" pattern="^[0-9]$" required />
           </div>
         </div>
         <!-- Bottom section -->
@@ -296,7 +296,7 @@
         <!-- Middle section -->
         <div class="relative mt-10">
           <span class="font-vazir font-semibold text-gray-700">کد ملی خود را وارد کنید</span>
-          <input class="w-full border-2 border-sky-600 py-3 pr-12 mt-4 rounded-lg focus:outline-1 bg-gray-100 focus:outline-sky-600 placeholder:font-vazir placeholder:text-[16px] js-id-input" type="text" placeholder="کد ملی ۱۰ رقمی">
+          <input class="w-full border-2 border-sky-600 py-3 pr-12 mt-4 rounded-lg focus:outline-1 bg-gray-100 focus:outline-sky-600 placeholder:font-vazir placeholder:text-[16px] js-id-input" type="text" placeholder="کد ملی ۱۰ رقمی" pattern="^[\u06F0-\u06F9]{10}$" required>
           <img class="absolute bottom-2.5 right-3 w-[8%]" src="contact.png" alt="contact">
         </div>
         <!-- Bottom section -->
@@ -380,7 +380,7 @@
         <!-- Middle section -->
         <div class="relative mt-10">
           <span class="font-vazir font-semibold text-gray-700"> نام کاربری دلخواه خود را وارد کنید</span>
-          <input class="w-full border-2 border-sky-600 py-3 pr-12 mt-4 rounded-lg focus:outline-1 bg-gray-100 focus:outline-sky-600 placeholder:font-vazir placeholder:text-[16px] js-username-input" type="text" placeholder="مانند: blubank">
+          <input class="w-full border-2 border-sky-600 py-3 pr-12 mt-4 rounded-lg focus:outline-1 bg-gray-100 focus:outline-sky-600 placeholder:font-vazir placeholder:text-[16px] js-username-input" type="text" placeholder="مانند: blubank" pattern="^[a-z][a-z\d_]{3,}$" required>
           <img class="absolute bottom-3 right-4 w-[7%]" src="username.png" alt="username">
         </div>
         <!-- Bottom section -->

@@ -11,6 +11,7 @@ let btnContinue = document.querySelector(".js-btn-continue");               //st
 let phoneInput = document.querySelector(".js-phone-input");                 //step 3
 let btnNext3 = document.querySelector(".js-btn-next4");                     //step 3
 const verifyInputs = document.querySelectorAll(".js-verify-input");         //step 4
+const enteredNumber = document.querySelector(".js-entered-num");            //step 4
 let btnNext4 = document.querySelector(".js-btn-next5");                     //step 4
 let btnBack = document.querySelector(".js-btn-back");                       //step 4
 let btnNext5 = document.querySelector(".js-btn-next6");                     //step 5
@@ -49,7 +50,6 @@ function loadStep() {
   })
 
   if (step === 3) showActiveInput();
-
   if (step === 6) resetAllWheels();
 
 }
@@ -71,6 +71,7 @@ termsCheck.addEventListener('click', () => {
 
 btnContinue.addEventListener('click', () => {
   if (termsCheck.checked) {
+    phoneInput.placeholder = "مانند: ۰۹۱۲۳۴۵۶۷۸۹"
     step++;
     loadStep();
   }
@@ -78,21 +79,16 @@ btnContinue.addEventListener('click', () => {
 
 // STEP 3: Phone number input and next button events
 phoneInput.addEventListener('input', () => {
-  if (phoneInput.value.length > 0) {
-    phoneInput.style.unicodeBidi = 'normal';
-    if (phoneInput.value.length === 11) {
-      btnNext3.classList.add('bg-blue-500', 'cursor-pointer', 'hover:bg-blue-500/90');
-    } else {
-        btnNext3.classList.remove('bg-blue-500', 'cursor-pointer', 'hover:bg-blue-500/90');
-    }
+  if (phoneInput.checkValidity()) {
+    btnNext3.classList.add('bg-blue-500', 'cursor-pointer', 'hover:bg-blue-500/90');
   } else {
-      phoneInput.style.unicodeBidi = 'bidi-override';
       btnNext3.classList.remove('bg-blue-500', 'cursor-pointer', 'hover:bg-blue-500/90');
   }
 })
 
 btnNext3.addEventListener('click', () => {
   if (btnNext3.classList.contains('cursor-pointer')) {
+    enteredNumber.innerText = phoneInput.value;
     step++;
     loadStep();
     phoneInput.value = '';
@@ -102,7 +98,9 @@ btnNext3.addEventListener('click', () => {
 // STEP 4: Verification code inputs and next button events
 function inputValueCheck() {
   for(let i=0; i < verifyInputs.length; i++) {
-    if (verifyInputs[i].value.length !== 1) return false;
+    if ((verifyInputs[i].value.length !== 1) || (!verifyInputs[i].checkValidity())) {
+      return false;
+    } 
   }
   return true;
 }
@@ -122,10 +120,11 @@ function showActiveInput() {
   })
 }
 
+
 verifyInputs.forEach((input) => {
   input.addEventListener('input', () => {
     // For changing focus
-    if (input.value.length === 1) {
+    if (input.value.length === 1 && input.checkValidity()) {
       activeInput--;
       showActiveInput();
     }
@@ -165,7 +164,7 @@ btnNext5.addEventListener('click', () => {
 
 // STEP 6: Personal ID input and next button events
 idInput.addEventListener('input', () => {
-  if (idInput.value.length === 10) {
+  if (idInput.checkValidity()) {
     btnNext6.classList.add('bg-blue-500', 'cursor-pointer', 'hover:bg-blue-500/90');
   }else {
     btnNext6.classList.remove('bg-blue-500', 'cursor-pointer', 'hover:bg-blue-500/90');
@@ -218,7 +217,7 @@ btnNext7.addEventListener('click', () => {
 
 // STEP 8: Username input and next button events
 usernameInput.addEventListener('input', () => {
-  if (usernameInput.value.length > 2) {
+  if (usernameInput.checkValidity()) {
     btnNext8.classList.add('bg-blue-500', 'cursor-pointer', 'hover:bg-blue-500/90');
   }else {
     btnNext8.classList.remove('bg-blue-500', 'cursor-pointer', 'hover:bg-blue-500/90');
