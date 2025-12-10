@@ -189,6 +189,7 @@ function resetAllWheels() {
     yearsContainer.scrollTo(0, yearsContainer.scrollHeight / 2 - yearsContainer.clientHeight / 2);
 }
 
+
 const days = Array.from({ length: 31 }, (_, i) => toPersian(i + 1));
 const months = [
   'فروردین', 'اردیبهشت', 'خرداد', 'تیر', 'مرداد', 'شهریور', 'مهر', 'آبان', 'آذر', 'دی', 'بهمن', 'اسفند'
@@ -198,6 +199,7 @@ const years = Array.from({ length: 61}, (_, i) => toPersian(1330 + i));
 createWheelItems(daysContainer, days);
 createWheelItems(monthsContainer, months);
 createWheelItems(yearsContainer, years);
+
 
 
 dateInput.addEventListener('input', () => {

@@ -1,3 +1,11 @@
+let dateInput = document.querySelector(".js-dateInput"); 
+
+export const date = ['', '', ''];
+
+let isUserScrolling = false;
+
+let timer;
+
 export function createWheelItems(container, values) {
   values.forEach((item) => {
     const element = document.createElement('div');
@@ -13,15 +21,11 @@ export function createWheelItems(container, values) {
   container.appendChild(el.cloneNode(true));
   container.appendChild(el.cloneNode(true));
   container.appendChild(el.cloneNode(true));
-
-  // container.scrollTo(0, container.scrollHeight / 2 - container.clientHeight / 2);
   
   container.addEventListener('scroll', () => updateActiveElement(container));
 }    
 
-function updateActiveElement(container) {
-  container.addEventListener('wheel', () => updateDate()); 
-
+function updateActiveElement(container) { 
 
   const childElements = container.querySelectorAll('.wheelItem');
   const containerCenter = Math.abs(container.scrollTop + container.offsetHeight / 2);
@@ -38,31 +42,42 @@ function updateActiveElement(container) {
     el.classList.toggle('wheelItem-l2', interval > elHeight + 16 && interval <= elHeight * 2 + 16);
 
     el.classList.toggle('wheelItem-l3', interval > elHeight * 2 + 16 && interval <= elHeight * 3 + 16);
-
   })
+
+  updateDate(container);
+
+  container.addEventListener('wheel', () => activateUserScroll());
+
+  if (isUserScrolling) {
+    dateInput.value = date.join('/');
+    dateInput.dispatchEvent(new Event("input"));
+  }
 }
 
-function updateDate() {
-  let day;
-  let month;
-  let year;
 
-  // Containers
-  let daysContainer = document.querySelector(".js-daysWheel");         
-  let monthsContainer = document.querySelector(".js-monthsWheel");     
-  let yearsContainer = document.querySelector(".js-yearsWheel"); 
-  let dateInput = document.querySelector(".js-dateInput"); 
-  
-  // Day/Month/Year elements
-  let dayEl = daysContainer.querySelector('.wheelItem-active');
-  let monthEl = monthsContainer.querySelector('.wheelItem-active');
-  let yearEl = yearsContainer.querySelector('.wheelItem-active');
+function activateUserScroll() {
+  isUserScrolling = true;
 
-  if (dayEl) day = dayEl.innerText;
-  if (monthEl) month = monthEl.innerText;
-  if (yearEl) year = yearEl.innerText;
+  if (timer) clearTimeout(timer);
 
-  dateInput.value = `${day}/${month}/${year}`;
-  dateInput.dispatchEvent(new Event("input"));
+  timer = setTimeout(() => {
+    isUserScrolling = false;
+  }, 500);
+
+}
+
+
+function updateDate(container) {
+  const activeEl = container.querySelector('.wheelItem-active');
+
+  if (activeEl) {
+    if (container.classList.contains('days')) {
+      date[0] = activeEl.innerText;
+    }else if (container.classList.contains('months')) {
+      date[1] = activeEl.innerText;
+    }else {
+      date[2] = activeEl.innerText;
+    }
+  }
 }
 
