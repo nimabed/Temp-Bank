@@ -201,7 +201,6 @@ createWheelItems(monthsContainer, months);
 createWheelItems(yearsContainer, years);
 
 
-
 dateInput.addEventListener('input', () => {
   if (dateInput.value.length > 0) {
     btnNext7.classList.add('bg-blue-500', 'cursor-pointer', 'hover:bg-blue-500/90');
